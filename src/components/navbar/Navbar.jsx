@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.png'
 
 export default function Navbar() {
+
+  const [sticky,setSticky] = React.useState(false);
+  useEffect(()=>{
+    window.addEventListener('scroll',()=>{
+      window.scrollY > 50 ? setSticky(true) : setSticky(false) 
+    })
+  },[])
+
   return (
-    <nav className='fixed top-0 left-0 flex items-center justify-between z-10 w-full py-4 px-0 text-white mycontainer '>
+    <nav className={`${sticky? 'dark-nav' : ''} fixed top-0 left-0 flex items-center justify-between z-10 w-full py-1 px-0 text-white mycontainer`}>
+      <div className="corepixel">
       <img className='w-180 logo cursor-pointer' src={logo} alt=""/>
+      </div>
+      
       <ul>
         <li>Home</li>
         <li>Events</li>

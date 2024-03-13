@@ -16,3 +16,15 @@
     align-items: center;
     justify-content: center;
 }
+.mybtn{
+    font-size: 15px;
+    font-weight: bold;
+}
+.mybtn img{
+    width: 22px;
+    margin-left: 9px;
+}
+
+.mybtn:hover{
+    font-size: 17px;
+}
